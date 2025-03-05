@@ -5,6 +5,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [downloadDropdown, setDownloadDropdown] = useState(false);
+  const [hotelDropdownOpen, setHotelDropdown] = useState(false);
 
   return (
     <nav className="bg-blue-600 p-4 shadow-md">
@@ -27,6 +28,40 @@ export default function Navbar() {
           <Link to="/" className="text-white hover:text-gray-300 block md:inline-block py-2">
             Home
           </Link>
+
+          {/* Hotel Dropdown */}
+          <div className="relative inline-block">
+            <button
+              onClick={() => setHotelDropdown(!hotelDropdownOpen)}
+              className="text-white hover:text-gray-300 block md:inline-block py-2"
+            >
+              Hotel 
+            </button>
+            {hotelDropdownOpen && (
+              <div className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md">
+                <Link
+                  //to="/upload/server1"
+                  to="/hotel-home"
+                  className="block px-4 py-2 text-gray-700 hover:bg-gray-200"
+                >
+                  Hotel Home
+                </Link>
+                <Link
+                  to="/hotel/:id"
+                  className="block px-4 py-2 text-gray-700 hover:bg-gray-200"
+                >
+                  Hotel Details
+                </Link>
+                <Link
+                  to="/image-upload"
+                  className="block px-4 py-2 text-gray-700 hover:bg-gray-200"
+                >
+                  Server 3
+                </Link>
+              </div>
+            )}
+          </div>
+
 
           {/* File Upload Dropdown */}
           <div className="relative inline-block">

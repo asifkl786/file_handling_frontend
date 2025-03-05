@@ -9,6 +9,8 @@ import Products from "./pages/Products";
 import ImageUpload from "./pages/ImageUpload";
 import FileDownloadd from "./components/FileDownloadd";
 import DownloadFile from "./components/DownloadFile";
+import HotelHome from "./components/HotelHome";
+import HotelDetails from "./components/HotelDetails";
 
 export default function App() {
   return (
@@ -17,6 +19,8 @@ export default function App() {
       <div className="container mx-auto p-4">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/hotel-home" element={<HotelHome />} />
+          <Route path="/hotel/:id" element={<HotelDetails />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/upload" element={<FileUpload />} />
           <Route path="/image-upload" element={<ImageUpload />} />
